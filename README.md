@@ -24,12 +24,13 @@ On the website itself I used Ajax to make API requests to the Proxy API and JQue
 The application can be found here: https://murmuring-brushlands-19054.herokuapp.com/
 
 You can also:
+```
 $ git clone https://github.com/TomSpencerLondon/sonar
 $ cd proxy_API
 $ run proxy.rb: 'ruby proxy.rb'
 $ cd ..
 $ open index.html
-
+```
 ## If I had more time...I would include:
 * Effective testing for API calls
 * Cleaner design of main.js and more separation of concerns
