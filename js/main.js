@@ -65,8 +65,8 @@ $(window).ready(function () {
     newHouse.innerHTML = `
     <div class="card mb-3">
       <div class="card-body">
-        <h5 class="card-title">${property.display_address}</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title">${property.price}</h5>
+        <p class="card-text">${property.display_address}</p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
         <img class="card-img-top" src="http://mr3.homeflow-assets.co.uk/${propertyClicked}" alt="Card image cap">
@@ -89,35 +89,37 @@ $(window).ready(function () {
     for(let i = 0; i < properties.length; i++){
       const property = properties[i]
       const photoURL = property.photos[0]
-      let propertyElement = document.createElement('div')
-      propertyElement.className = 'property'
-      propertyElement.innerHTML =
+      if(photoURL != undefined) {
+        let propertyElement = document.createElement('div')
+        propertyElement.className = 'property'
+        propertyElement.innerHTML =
 
-      `<section>
-          <div class="container py-3">
-            <div class="card">
-              <div class="row ">
-                <div class="col-md-4">
-                    <img src="http://mr3.homeflow-assets.co.uk/${photoURL}" class="card-img-top img-fluid">
-                </div>
-                  <div class="col-md-8 px-3">
-                    <div class="card-block px-3">
-                      <p class="card-text">${property.display_address}</p>
-                      <p class="card-text">${property.price}</p>
+        `<section>
+            <div class="container py-3">
+              <div class="card">
+                <div class="row ">
+                  <div class="col-md-5">
+                      <img src="http://mr3.homeflow-assets.co.uk/${photoURL}" class="card-img-top img-fluid center-block">
+                  </div>
+                    <div class="col-md-7">
+                      <div class="card-block">
+                        <h5 class="card-text">${property.price}</h5>
+                        <p class="card-text">${property.display_address}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>`
+          </section>`
 
-      propertyElement.addEventListener("click", function (e){
-        e.preventDefault()
-        console.log("You clicked on:" + property.display_address);
-        displayHouse(property)
-      })
-      thumbnailsArea.append(propertyElement)
+        propertyElement.addEventListener("click", function (e){
+          e.preventDefault()
+          console.log("You clicked on:" + property.display_address);
+          displayHouse(property)
+        })
+        thumbnailsArea.append(propertyElement)
+      }
     }
   }
 
