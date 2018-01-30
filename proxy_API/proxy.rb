@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'httparty'
 require 'sinatra/base'
+require 'dotenv/load'
 
 class App < Sinatra::Application
 
@@ -8,12 +9,12 @@ class App < Sinatra::Application
     include HTTParty
 
     def places(name)
-      response = HTTParty.get("http://index1.homeflow.co.uk/places", :query => {:api_key => "77467477edfd2689cd77796a2c4b019f", :"search[name]" => name})
+      response = HTTParty.get("http://index1.homeflow.co.uk/places", :query => {:api_key => ENV['API_KEY'], :"search[name]" => name})
       response.body
     end
 
     def properties(place_id, channel, min_price, max_price)
-      query = {:api_key => "77467477edfd2689cd77796a2c4b019f", :"search[place][id]" => place_id, :"search[channel]" => channel}
+      query = {:api_key => ENV['API_KEY'], :"search[place][id]" => place_id, :"search[channel]" => channel}
       query[:"search[min_price]"] = min_price if min_price != nil
       query[:"search[max_price]"] = max_price if max_price != nil
       response = HTTParty.get("http://index1.homeflow.co.uk/properties", :query => query)
