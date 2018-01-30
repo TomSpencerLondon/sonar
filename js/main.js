@@ -64,13 +64,16 @@ $(window).ready(function () {
     propertyClicked = property.photos[0].replace("120x90", "490x327")
     newHouse.innerHTML = `
     <div class="card mb-3">
+      <img class="card-img-top" src="http://mr3.homeflow-assets.co.uk/${propertyClicked}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">${property.price}</h5>
         <p class="card-text">${property.display_address}</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <p class="card-text"><b>Property Type:</b> ${property.property_type}</p>
+        <p class="card-text">${property.short_description}</p>
       </div>
-        <img class="card-img-top" src="http://mr3.homeflow-assets.co.uk/${propertyClicked}" alt="Card image cap">
-
+    </div>
+    <div class="logo">
+      <img src="http://mr3.homeflow-assets.co.uk/${property.agency.agency_logo}" height="80" width="200">
     </div>`
                 // <div class="pull-left">
                 //   <h1>${property.display_address}</h1>

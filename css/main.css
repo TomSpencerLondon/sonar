@@ -47,3 +47,8 @@ h4 {
   font-size: 36px;
   color: black;
 }
+
+.logo {
+    height:250px;
+    width:100%;
+}
