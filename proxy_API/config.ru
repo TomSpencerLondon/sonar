@@ -1,0 +1,3 @@
+require './proxy'
+
+run App

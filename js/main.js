@@ -1,7 +1,9 @@
 $(window).ready(function () {
 
+
   $('#search-location').on('click', function (e) {
     e.preventDefault()
+    // let apiSearch = new apiSearch()
     const location = $('#location').val()
     const channel = $('#channel').val().toLowerCase()
     const minPrice = $('#min_price').val()
@@ -42,7 +44,7 @@ $(window).ready(function () {
       queryParams.max_price = maxPrice
     }
 
-    const queryString = $.param(queryParams) 
+    const queryString = $.param(queryParams)
     return $.ajax({
       url: 'http://localhost:4567/properties?' + queryString,
       error: function (_, _, thrownError) {
@@ -86,7 +88,7 @@ $(window).ready(function () {
     thumbnailsArea.empty()
     for(let i = 0; i < properties.length; i++){
       const property = properties[i]
-      const photoURL = property.photos[0].replace("120x90", "180x135")
+      const photoURL = property.photos[0]
       let propertyElement = document.createElement('div')
       propertyElement.className = 'property'
       propertyElement.innerHTML =
@@ -109,29 +111,6 @@ $(window).ready(function () {
             </div>
           </div>
         </section>`
-
-      // `<div class="row">
-      //     <div class="col-md-6 col-sm-6 col-xs-6">
-      //       <ul class media-list main-list">
-      //         <li class="media">
-      //           <div class="card pull-left">
-      //             <a class="pull-left" href="#">
-      //               <img src="http://mr3.homeflow-assets.co.uk/${property.photos[0]}" class="card-img-top img-fluid">
-      //             </a>
-      //
-      //           </div>
-      //     </div>
-      //       <div class="col-md-6 col-sm-6 col-xs-6">
-      //           <div class="pull left">
-      //             ${property.display_address}
-      //           </div>
-      //           <div class="pull left">
-      //             ${property.price}</p>
-      //           </div>
-      //         </div>
-      //       </div>
-      //     </li>
-      //   </div>`
 
       propertyElement.addEventListener("click", function (e){
         e.preventDefault()
