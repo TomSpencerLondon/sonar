@@ -54,9 +54,6 @@ $(window).ready(function () {
   }
 
   function displayHouse(property) {
-    console.log("Hello")
-    console.log("This is the displayHouse photo:" + property.photos[0].replace("120x90", "804x538"))
-
     let houseClicked = $('#house-clicked')
     houseClicked.empty()
     let newHouse = document.createElement('div')

@@ -19,6 +19,12 @@ There were two levels to the API calls. In the first place I needed to make a GE
 This, then, gave me enough information to call the properties section of the API:
  http://index1.homeflow.co.uk/properties?api_key=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&search[place][id]=51e7c4a873dadaf60feee624&[search][channel]=sales
 
+## If I had more time...
+* Effective testing for API calls
+* Cleaner design of main.js and more separation of concerns
+* More comprehensive planning for UX design. For example I would like to implement a fix for selected house image so that it stays in the middle of the screen when the user scrolls. 
+
+
 ## Viewing the application:
 
 You can use the application here: https://murmuring-brushlands-19054.herokuapp.com/
