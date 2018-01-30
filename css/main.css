@@ -1,0 +1,49 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.image-section {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+
+.main-title {
+  text-align: right;
+  text-transform: uppercase;
+  padding-top: 50px;
+  padding-bottom: 15px;
+}
+
+.project-img {
+  max-width: 100%;
+}
+
+.featured {
+  padding: 20px;
+  text-align: center;
+}
+
+.pics {
+  padding-left: 30px;
+}
+
+h2,
+h3 {
+  text-align: center;
+}
+
+h1,
+h4 {
+  text-align: right;
+}
+
+.icons {
+  font-size: 36px;
+  color: black;
+}

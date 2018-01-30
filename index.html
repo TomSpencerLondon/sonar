@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+      Sonar - Letting & Estate Agents
+    </title>
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon.jpg"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="row">
+
+    <!--Grid column-->
+    <div class="col-md-12">
+        <div class="card card-image" style="background-image: url(images/sonar_image.jpg); background-size: cover; background-position: center center; background-repeat:no-repeat; height: 500px: width: 100%">
+            <div class="text-primary text-center d-flex align-items-center py-5 px-6">
+                  <img src="images/sonar_logo.png">
+                  <h3 class="card-title font-bold"><strong>Sonar Letting & Estate Agents</strong></h3>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div class="container">
+          <div class="row mt-3">
+            <div class="col-md-4 text-center">
+              <p>Enter a location for the property search</p>
+              <select class="form-control" id="channel">
+                <option>Sales</option>
+                <option>Lettings</option>
+              </select>
+              <form class="form my-2 my-lg-0 mt-2">
+                <input id="min_price" class="form-control mr-sm-2" type="text" placeholder="Minimum_Price" aria-label="Minimum_Price">
+                <input id="max_price" class="form-control mr-sm-2" type="text" placeholder="Maximum_Price" aria-label="Maximum_Price">
+                <input id="location" class="form-control mr-sm-2" type="text" placeholder="Location" aria-label="Search">
+                <button id="search-location" class="btn btn-outline-primary" type="submit">Submit</button>
+              </form>
+            </div>
+          <!-- This is where the houses thumbnails appear -->
+          <div class="col-md-4">
+            <div id="houses-thumbnails">
+            </div>
+          </div>
+
+          <!-- This is where the house clicked on appears -->
+          <div class="col-md-4">
+              <div id="house-clicked">
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
