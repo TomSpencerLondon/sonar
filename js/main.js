@@ -24,7 +24,7 @@ $(window).ready(function () {
 
   function placesSearch(name) {
     return $.ajax({
-      url: 'http://localhost:4567/places?name=' + name,
+      url: 'https://whispering-shore-85679.herokuapp.com/places?name=' + name,
       error: function (_, _, thrownError) {
         alert(thrownError);
       }
@@ -46,7 +46,7 @@ $(window).ready(function () {
 
     const queryString = $.param(queryParams)
     return $.ajax({
-      url: 'http://localhost:4567/properties?' + queryString,
+      url: 'https://whispering-shore-85679.herokuapp.com/properties?' + queryString,
       error: function (_, _, thrownError) {
         alert(thrownError);
       }
