@@ -3,23 +3,8 @@ $(window).ready(function () {
 
   $('#search-location').on('click', function (e) {
     e.preventDefault()
-    // let apiSearch = new apiSearch()
     const location = $('#location').val()
-    const channel = $('#channel').val().toLowerCase()
-    const minPrice = $('#min_price').val()
-    const maxPrice = $('#max_price').val()
-    placesSearch(location)
-    .done(function (results){
-      results = JSON.parse(results)
-      const placeID = results.result.locations.elements[0].place_id;
-      console.log(placeID);
-      propertiesSearch(placeID, channel, minPrice, maxPrice)
-      .done(function(results){
-        results = JSON.parse(results)
-        const properties = results.result.properties.elements
-        displayHousesThumbnails(properties);
-      })
-    })
+    placesSearch(location).done(onPlacesSearchResults)
   });
 
   function placesSearch(name) {
@@ -29,6 +14,15 @@ $(window).ready(function () {
         alert(thrownError);
       }
     })
+  }
+
+  function onPlacesSearchResults(results){
+    const channel = $('#channel').val().toLowerCase()
+    const minPrice = $('#min_price').val()
+    const maxPrice = $('#max_price').val()
+    results = JSON.parse(results)
+    const placeID = results.result.locations.elements[0].place_id;
+    propertiesSearch(placeID, channel, minPrice, maxPrice).done(onPropertiesSearchResults);
   }
 
   function propertiesSearch(placeID, channel, minPrice, maxPrice) {
@@ -51,6 +45,12 @@ $(window).ready(function () {
         alert(thrownError);
       }
     })
+  }
+
+  function onPropertiesSearchResults(results){
+    results = JSON.parse(results)
+    const properties = results.result.properties.elements
+    displayHousesThumbnails(properties);
   }
 
   function displayHouse(property) {
